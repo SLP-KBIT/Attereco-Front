@@ -12,7 +12,8 @@
         AllowsTransparency="True"
         Background="Transparent"
         ShowActivated="False"
-        ResizeMode="NoResize" > 
+        ResizeMode="NoResize" 
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
     
     <Window.Resources>
         <ResourceDictionary>
@@ -32,11 +33,13 @@
                               Color="#FF007ACC" />
         </Border.Effect>
         <Grid>
+            <Border Grid.Row="1" Background="#FF007ACC" />
+            <DockPanel>
+            </DockPanel>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="23" />
             </Grid.RowDefinitions>
-            <Border Grid.Row="1" Background="#FF007ACC" />
         </Grid>
     </Border>
 </Window>

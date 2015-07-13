@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Attereco_Front.ViewModel;
+using Attereco_Front.Model;
 
 namespace Attereco_Front
 {
@@ -14,6 +15,12 @@ namespace Attereco_Front
         public MainWindow()
         {
             InitializeComponent();
+            Closing += (s, e) => ViewModelLocator.Cleanup();
+        }
+
+        private void Window_SourceInitialized(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

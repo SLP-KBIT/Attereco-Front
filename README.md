@@ -8,6 +8,7 @@
 
 - .NET Framework4.5
 - MVVM Light Toolkit
+- [DynamicJson](http://dynamicjson.codeplex.com/)
 
 ## Usage
 
