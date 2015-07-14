@@ -8,7 +8,7 @@ namespace Attereco_Front.Model
 {
     public static class Log
     {
-        public static void WriteLog(String message, Exception ex)
+        public static void WriteLog(String message, Exception ex = null)
         {
             try
             {

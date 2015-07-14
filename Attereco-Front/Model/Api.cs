@@ -10,11 +10,12 @@ namespace Attereco_Front.Model
     {
         private const String basedUrl = "";
 
-        public static Boolean PostData()
+        public static Boolean Post(String rooting, String json)
         {
             try
             {
-                //TODO
+                String url = basedUrl + rooting;
+                Log.WriteLog(json);
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
             {
@@ -29,10 +30,11 @@ namespace Attereco_Front.Model
             return true;
         }
 
-        public static String GetData(String url)
+        public static String Get(String rooting)
         {
             try
             {
+                String url = basedUrl + rooting;
                 //TODO
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
