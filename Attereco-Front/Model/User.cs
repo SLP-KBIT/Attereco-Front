@@ -15,25 +15,29 @@ namespace Attereco_Front.Model
             this.LoginTime = DateTime.Now;
         }
 
-        public String Name { get; set; }
-
-        public DateTime LoginTime { get; set; }
-
         /// <summary>
-        /// データをサーバにpostする
+        /// Userコンストラクタ
         /// </summary>
-        /// <param name="json">user情報</param>
-        public void postData(string json)
+        /// <param name="name">name</param>
+        /// <param name="dynamic">new DynamicJson()</param>
+        public User(string name, dynamic dynamic)
         {
-            //TODO
+            this.Name = name;
+            this.LoginTime = DateTime.Now;
+            this.SetJson(this, dynamic);
         }
 
-        private string ToJson()
+        public String Name { get; private set; }
+
+        public DateTime LoginTime { get; private set; }
+
+        public String Json { get; private set; }
+
+        private void SetJson(User user, dynamic dynamic)
         {
-            dynamic json = new DynamicJson();
-            json["User"] = this.Name;
-            json["LoginTime"] = this.LoginTime;
-            return json.toString();
+            dynamic["User"] = this.Name;
+            dynamic["LoginTime"] = this.LoginTime;
+            this.Json = dynamic.toString();
         }
     }
 }

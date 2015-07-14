@@ -72,13 +72,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DynamicJson.cs" />
+    <Compile Include="Model\Api.cs" />
+    <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MenuList\MenuListViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="Views\MenuList\MenuList.xaml.cs">
-      <DependentUpon>MenuList.xaml</DependentUpon>
-    </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,10 +92,6 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\MenuList\MenuList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
