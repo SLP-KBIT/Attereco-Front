@@ -5,18 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ignore="http://www.ignore.com"
              mc:Ignorable="d ignore"
-             Width="115"
-             Height="85"
              Background="Aqua" >
 
     <Grid>
-        <ListBox Background="Transparent">
+        <StackPanel Background="Transparent"
+                    Orientation="Horizontal">
             <ListBox Background="Transparent">
                 <TextBlock Text="氏名" />
                 <TextBox Width="100"
                          Height="30" />
-            </ListBox> 
-            <Button Content="送信" />
-        </ListBox>
+            </ListBox>
+            <ListBox Background="Transparent">
+                <TextBlock Text="プロジェクト" />
+                <TextBox Width="100"
+                         Height="30" />
+            </ListBox>
+            <ListBox Background="Transparent">
+                <Button Content="送信" 
+                    Margin="0 25 0 0"
+                    Width="100"/>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>
