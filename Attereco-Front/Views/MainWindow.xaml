@@ -37,7 +37,12 @@
                            Margin="10 3 3 3"/>
             </Border>
             <DockPanel>
-                <ContentControl Content="{Binding this.DummyUserFormViewModel}" />
+                <ListBox HorizontalAlignment="Stretch"
+                         DockPanel.Dock="Left"
+                         Background="Transparent">
+                    <ContentControl Content="{Binding StaticContentViewModel}" />
+                    <ContentControl Content="{Binding DummyUserFormViewModel}" />
+                </ListBox>
             </DockPanel>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />

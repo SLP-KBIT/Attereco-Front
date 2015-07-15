@@ -4,6 +4,8 @@
              xmlns:vm="clr-namespace:Attereco_Front.ViewModel"
              xmlns:vm_dummy="clr-namespace:Attereco_Front.ViewModel.Dummy"
              xmlns:view_dummy="clr-namespace:Attereco_Front.Views.Dummy"
+             xmlns:vm_static="clr-namespace:Attereco_Front.ViewModel.StaticContent"
+             xmlns:view_static="clr-namespace:Attereco_Front.Views.StaticContent"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              StartupUri="Views/MainWindow.xaml"
@@ -14,7 +16,10 @@
             <vm:ViewModelLocator x:Key="Locator"
                              d:IsDataSource="True" />
 
-            <DataTemplate DataType="x:Type vm_dummy:DummyUserFormViewModel">
+            <DataTemplate DataType="{x:Type vm_static:StaticContentViewModel}">
+                <view_static:StaticContent />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm_dummy:DummyUserFormViewModel}">
                 <view_dummy:DummyUserForm />
             </DataTemplate>
         </ResourceDictionary>

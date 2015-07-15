@@ -78,8 +78,13 @@
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\Dummy\DummyUserFormViewModel.cs" />
+    <Compile Include="ViewModel\Footer\FooterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\StaticContent\StaticContentViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\StaticContent\StaticContent.xaml.cs">
+      <DependentUpon>StaticContent.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Dummy\DummyUserForm.xaml">
       <SubType>Form</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +107,10 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StaticContent\StaticContent.xaml">
+      <SubType>Form</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

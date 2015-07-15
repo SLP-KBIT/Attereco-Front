@@ -5,14 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ignore="http://www.ignore.com"
              mc:Ignorable="d ignore"
-             Width="300"
-             Height="100"
+             Width="115"
+             Height="85"
              Background="Aqua" >
 
     <Grid>
-        <StackPanel x:Name="DummyUserFormContent">
-            <TextBlock Text="hoge"/>
-            <TextBlock Text="poge"/>
-        </StackPanel>
+        <ListBox Background="Transparent">
+            <ListBox Background="Transparent">
+                <TextBlock Text="氏名" />
+                <TextBox Width="100"
+                         Height="30" />
+            </ListBox> 
+            <Button Content="送信" />
+        </ListBox>
     </Grid>
 </UserControl>
