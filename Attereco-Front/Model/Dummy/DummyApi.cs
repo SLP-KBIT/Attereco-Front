@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Codeplex.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,11 @@ namespace Attereco_Front.Model.Dummy
         /// </summary>
         /// <param name="json">IDを含んだjson</param>
         /// <returns>氏名，プロジェクト，学年，日付を含んだJson</returns>
-        public static String DummyPost(String json)
+        public static DynamicJson DummyPost(DynamicJson json)
         {
+            DynamicJson data = json;
             try
             {
-
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
             {
@@ -32,7 +33,7 @@ namespace Attereco_Front.Model.Dummy
                 Log.WriteLog("NullReferenceException", ex);
                 return null;
             }
-            return "";
+            return data;
         }
 
         /// <summary>
@@ -40,11 +41,11 @@ namespace Attereco_Front.Model.Dummy
         /// </summary>
         /// <param name="json">IDを含んだjson</param>
         /// <returns>氏名，プロジェクト，学年，日付を含んだJson</returns>
-        public static String DummyGet()
+        public static DynamicJson DummyGet()
         {
+            DynamicJson data = new DynamicJson();
             try
             {
-
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
             {
@@ -56,7 +57,7 @@ namespace Attereco_Front.Model.Dummy
                 Log.WriteLog("NullReferenceException", ex);
                 return null;
             }
-            return "";
+            return data;
         }
     }
 
