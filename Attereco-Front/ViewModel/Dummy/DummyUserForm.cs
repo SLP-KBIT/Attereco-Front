@@ -6,6 +6,7 @@ namespace Attereco_Front.ViewModel.Dummy
     {
         public DummyUserForm()
         {
+
         }
     }
 }

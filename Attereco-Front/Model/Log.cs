@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Attereco_Front.Model
 {
+    /// <summary>
+    /// Logを簡単に取ることを可能にするクラス
+    /// </summary>
     public static class Log
     {
+        /// <summary>
+        /// ログの書き込み
+        /// </summary>
+        /// <param name="message">メッセージ</param>
+        /// <param name="ex">例外，初期値:null</param>
         public static void WriteLog(String message, Exception ex = null)
         {
             try

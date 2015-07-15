@@ -4,27 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Attereco_Front.Model
+namespace Attereco_Front.Model.Dummy
 {
-    public static class Api
+    /// <summary>
+    /// Apiが実装されるまでDummyのデータを返すモデル
+    /// </summary>
+    public static class DummyApi
     {
         /// <summary>
-        /// ベースとなるURL
+        /// PostのDummy
         /// </summary>
-        private const String baseUrl = "";
-
-        /// <summary>
-        /// APIのPostを叩く
-        /// </summary>
-        /// <param name="rooting"></param>
-        /// <param name="json">IDMを含んだJson</param>
-        /// <returns>ユーザー情報のjson</returns>
-        public static String Post(String rooting, String json)
+        /// <param name="json">IDを含んだjson</param>
+        /// <returns>氏名，プロジェクト，学年，日付を含んだJson</returns>
+        public static String DummyPost(String json)
         {
             try
             {
-                String url = baseUrl + rooting;
-                Log.WriteLog(json);
+
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
             {
@@ -40,16 +36,15 @@ namespace Attereco_Front.Model
         }
 
         /// <summary>
-        /// APIのGetを叩く
+        /// GetのDummy
         /// </summary>
-        /// <param name="rooting"></param>
-        /// <returns>ログインユーザー一覧？</returns>
-        public static String Get(String rooting)
+        /// <param name="json">IDを含んだjson</param>
+        /// <returns>氏名，プロジェクト，学年，日付を含んだJson</returns>
+        public static String DummyGet()
         {
             try
             {
-                String url = baseUrl + rooting;
-                //TODO
+
             }
             catch (System.Runtime.Remoting.RemotingTimeoutException ex)
             {
@@ -64,4 +59,5 @@ namespace Attereco_Front.Model
             return "";
         }
     }
+
 }
