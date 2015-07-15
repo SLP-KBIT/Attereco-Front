@@ -5,14 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
         mc:Ignorable="d ignore"
-        Height="600"
-        Width="800"
         Title="MVVM Light Application"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
         ShowActivated="False"
-        ResizeMode="NoResize" 
+        Topmost="True"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
     <Window.Resources>
@@ -33,8 +31,13 @@
                               Color="#FF007ACC" />
         </Border.Effect>
         <Grid>
-            <Border Grid.Row="1" Background="#FF007ACC" />
+            <Border Grid.Row="1" Background="#FF007ACC">
+                <TextBlock Text="準備完了"
+                           Foreground="White"
+                           Margin="10 3 3 3"/>
+            </Border>
             <DockPanel>
+                <ContentControl Content="{Binding this.DummyUserFormViewModel}" />
             </DockPanel>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />

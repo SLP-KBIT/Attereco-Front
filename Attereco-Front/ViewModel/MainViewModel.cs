@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using Attereco_Front.Model;
 using System.Collections.Generic;
-
+using Attereco_Front.ViewModel.Dummy;
 
 namespace Attereco_Front.ViewModel
 {
@@ -12,9 +12,10 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            Contents = new List<ViewModelBase>() {};
+            this.DummyUserFormViewModel = new DummyUserFormViewModel();
         }
 
-        public List<ViewModelBase> Contents { get; private set; }
+        public DummyUserFormViewModel DummyUserFormViewModel { get; private set; }
+
     }
 }

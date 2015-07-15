@@ -18,9 +18,5 @@ namespace Attereco_Front
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 
-        private void Window_SourceInitialized(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }

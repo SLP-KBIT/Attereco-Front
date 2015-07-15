@@ -5,12 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ignore="http://www.ignore.com"
              mc:Ignorable="d ignore"
-             Width="200"
-             Height="50"
-             DataContext="{Binding DummyUserFormVM, Source={StaticResource Locator}}">
+             Width="300"
+             Height="100"
+             Background="Aqua" >
 
     <Grid>
-        <TextBlock>
-        </TextBlock>
+        <StackPanel x:Name="DummyUserFormContent">
+            <TextBlock Text="hoge"/>
+            <TextBlock Text="poge"/>
+        </StackPanel>
     </Grid>
 </UserControl>
