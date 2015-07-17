@@ -32,17 +32,9 @@
         </Border.Effect>
         <Grid>
             <Border Grid.Row="1" Background="#FF007ACC">
-                <TextBlock Text="準備完了"
-                           Foreground="White"
-                           Margin="10 3 3 3"/>
             </Border>
             <DockPanel>
-                <ListBox HorizontalAlignment="Stretch"
-                         DockPanel.Dock="Left"
-                         Background="Transparent">
-                    <ContentControl Content="{Binding StaticContentViewModel}" />
-                    <ContentControl Content="{Binding DummyUserFormViewModel}" />
-                </ListBox>
+
             </DockPanel>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />

@@ -72,23 +72,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DynamicJson.cs" />
-    <Compile Include="Model\Api.cs" />
-    <Compile Include="Model\Dummy\DummyApi.cs" />
-    <Compile Include="Model\Felica.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="ViewModel\Dummy\DummyUserFormViewModel.cs" />
-    <Compile Include="ViewModel\Footer\FooterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\StaticContent\StaticContentViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="Views\StaticContent\StaticContent.xaml.cs">
-      <DependentUpon>StaticContent.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\Dummy\DummyUserForm.xaml">
-      <SubType>Form</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,9 +84,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\Dummy\DummyUserForm.xaml.cs">
-      <DependentUpon>DummyUserForm.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -107,10 +91,6 @@
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\StaticContent\StaticContent.xaml">
-      <SubType>Form</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
