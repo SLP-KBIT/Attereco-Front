@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight;
 
 using NUnit.Framework;
+using Attereco_Front.ViewModel;
 
 namespace Attereco_Front_Test
 {
@@ -18,6 +20,7 @@ namespace Attereco_Front_Test
         [SetUp]
         public void SetUp()
         {
+            MainViewModel hoge = new MainViewModel();
         }
 
         [TearDown]
