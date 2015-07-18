@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.ignore.com"
         mc:Ignorable="d ignore"
-        Title="MVVM Light Application"
+        Title="Attereco-Front"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"

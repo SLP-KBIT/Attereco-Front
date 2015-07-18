@@ -58,12 +58,12 @@ namespace Attereco_Front.Model
         public DateTime LoginTime { get; set; }
         
         /// <summary>
-        /// 所属プロジェクト
+        /// 所属プロジェクト:保留
         /// </summary>
         public string Project { get; set; }
 
         /// <summary>
-        /// 学年
+        /// 学年:保留
         /// </summary>
         public int Rank { get; set; }
 
