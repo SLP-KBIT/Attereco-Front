@@ -4,8 +4,8 @@ install:
     - sudo apt-get update
     - sudo apt-get install mono-devel mono-gmcs nunit-console
     - wget http://nuget.org/nuget.exe
-    - ./nuget restore Attereco-Front.sln
-    - ./nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+    - ./nuget.exe restore Attereco-Front.sln
+    - ./nuget.exe install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
     - xbuild /p:Configuration=Debug Attereco-Fonrt.sln
     - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Attereco-Front-Test/bin/Debug/Attereco-Front-Test.dll
