@@ -1,6 +1,7 @@
 langage: csharp
 solition: Attereco-Front.sln
 install:
+    - sudo apt-get update
     - sudo apt-get install mono-devel mono-gmcs nunit-console
     - nuget restore Attereco-Front.sln
     - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
