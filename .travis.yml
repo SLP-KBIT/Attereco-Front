@@ -1,0 +1,11 @@
+langage: csharp
+solition: Attereco-Front.sln
+before_install:
+    - sudo apt-get install -y nuit-console
+install:
+    - sudo apt-get install -y gtk-sharp2
+    - nuget restore Attereco-Front.sln
+    - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+    - xbuild /p:Configuration=Debug Attereco-Fonrt.sln
+    - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Attereco-Front-Test/bin/Debug/Attereco-Front-Test.dll
