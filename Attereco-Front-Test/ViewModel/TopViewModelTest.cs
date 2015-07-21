@@ -8,20 +8,20 @@ using GalaSoft.MvvmLight;
 using NUnit.Framework;
 using Attereco_Front.ViewModel;
 
-namespace Attereco_Front_Test
+namespace Attereco_Front_Test.ViewModel
 {
     /// <summary>
-    /// MainViewModelのテスト
+    /// TopViewModelTestのテスト
     /// </summary>
     [TestFixture]
-    public class MainViewModelTest
+    public class TopViewModelTest
     {
-        MainViewModel MainVM;
+        TopViewModel TopVM;
         
         [SetUp]
         public void SetUp()
         {
-            MainVM = new MainViewModel();
+            TopVM = new TopViewModel();
         }
 
         [TearDown]
@@ -30,9 +30,9 @@ namespace Attereco_Front_Test
         }
 
         [Test]
-        public void TopViewModelを持っていること()
+        public void FormViewModelを持っていること()
         {
-            Assert.AreEqual(MainVM.TopVM.GetType().Name, (new TopViewModel()).GetType().Name);
+            Assert.AreEqual(TopVM.FormVM.GetType().Name, (new FormViewModel()).GetType().Name);
         }
     }
 }
