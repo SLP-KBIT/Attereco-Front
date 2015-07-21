@@ -31,11 +31,10 @@
                               Color="#FF007ACC" />
         </Border.Effect>
         <Grid>
+            <ContentControl Grid.Row="0"
+                            Content="{Binding TopVM}" />
             <Border Grid.Row="1" Background="#FF007ACC">
             </Border>
-            <DockPanel>
-
-            </DockPanel>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="23" />
