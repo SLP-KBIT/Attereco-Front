@@ -19,5 +19,15 @@
                    Foreground="White"
                    Grid.Row="0"
                    Text="カードをかざしてください"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+                     Height="50" Width="300"
+                     FontSize="30"/>
+        </Grid>
     </Grid>
 </UserControl>
