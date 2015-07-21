@@ -14,11 +14,6 @@
 
 - [NUnit](http://www.nunit.org/)
 
-## Reference
-
-- [MetroStyleforWPFButton](https://gist.github.com/alimbada/3083937)
-- [grabacr.net](http://grabacr.net/archives/507)
-
 ## Usage
 
 ## Contact

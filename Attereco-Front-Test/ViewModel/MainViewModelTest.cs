@@ -16,12 +16,11 @@ namespace Attereco_Front_Test
     [TestFixture]
     public class MainViewModelTest
     {
-        MainViewModel MainVM;
         
         [SetUp]
         public void SetUp()
         {
-            MainVM = new MainViewModel();
+            MainViewModel hoge = new MainViewModel();
         }
 
         [TearDown]
@@ -30,9 +29,9 @@ namespace Attereco_Front_Test
         }
 
         [Test]
-        public void TopViewModelを持っていること()
+        public void サンプル()
         {
-            Assert.AreEqual(MainVM.TopVM.GetType().Name, (new TopViewModel()).GetType().Name);
+            Assert.AreEqual(1 + 1, 2);
         }
     }
 }
