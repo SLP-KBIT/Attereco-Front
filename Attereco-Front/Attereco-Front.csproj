@@ -82,6 +82,7 @@
     <Compile Include="Model\Common\IClient.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\FormViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TopViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
