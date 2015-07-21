@@ -16,6 +16,10 @@
             <DataTemplate DataType="{x:Type vm:TopViewModel}">
                 <view_top:Top />
             </DataTemplate>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MetroButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
