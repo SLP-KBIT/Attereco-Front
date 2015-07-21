@@ -82,6 +82,7 @@
     <Compile Include="Model\Common\IClient.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\FormViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TopViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
@@ -92,6 +93,10 @@
     <Compile Include="Views\Welcome\Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Page Include="Skins\MetroButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
