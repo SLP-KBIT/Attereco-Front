@@ -11,16 +11,7 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            TopVM = new TopViewModel();
+
         }
-
-        #region TopViewModel TopVM
-
-        /// <summary>
-        /// TopViewModelのインスタンス
-        /// </summary>
-        public TopViewModel TopVM { get; set; }
-
-        #endregion
     }
 }
