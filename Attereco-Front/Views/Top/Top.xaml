@@ -4,9 +4,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ignore="http://www.ignore.com"
-             mc:Ignorable="d ignore">
+             mc:Ignorable="d ignore"
+             d:DesignHeight="500" d:DesignWidth="1000">
 
     <Grid>
-        <TextBlock Background="White">hogehoge</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="50"
+                   Foreground="White"
+                   Grid.Row="0"
+                   Text="カードをかざしてください"/>
     </Grid>
 </UserControl>
