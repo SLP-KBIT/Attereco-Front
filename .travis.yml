@@ -1,7 +1,7 @@
-langage: csharp
+language: csharp
 mono:
     - latest
-solition: Attereco-Front.sln
+solution: Attereco-Front.sln
 install:
     - nuget restore Attereco-Front.sln
     - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
