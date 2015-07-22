@@ -1,7 +1,5 @@
 # Attereco-Front
 
-[![Build Status](https://travis-ci.org/rdireen/simple.svg?branch=master)](https://travis-ci.org/rdireen/simple)
-
 ## About
 
 ## Installation
