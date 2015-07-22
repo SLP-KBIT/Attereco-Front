@@ -1,4 +1,6 @@
 langage: csharp
+mono:
+    - latest
 solition: Attereco-Front.sln
 install:
     - sudo apt-get update
