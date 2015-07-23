@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 
 using NUnit.Framework;
 using Attereco_Front.ViewModel;
+using Attereco_Front.Model.Common;
 
 namespace Attereco_Front_Test.ViewModel
 {
@@ -32,7 +33,7 @@ namespace Attereco_Front_Test.ViewModel
         [Test]
         public void FormViewModelを持っていること()
         {
-            Assert.AreEqual(TopVM.FormVM.GetType().Name, (new FormViewModel()).GetType().Name);
+            Assert.AreEqual(TopVM.FormVM.GetType().Name, (new FormViewModel(new DummyClient())).GetType().Name);
         }
     }
 }

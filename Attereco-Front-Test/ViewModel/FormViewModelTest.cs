@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight;
 
 using NUnit.Framework;
 using Attereco_Front.ViewModel;
+using Attereco_Front.Model.Common;
 
 namespace Attereco_Front_Test.ViewModel
 {
@@ -22,7 +23,7 @@ namespace Attereco_Front_Test.ViewModel
         [SetUp]
         public void SetUp()
         {
-            FormVM = new FormViewModel();
+            FormVM = new FormViewModel(new DummyClient());
         }
 
         [TearDown]
@@ -71,7 +72,7 @@ namespace Attereco_Front_Test.ViewModel
                 [SetUp]
                 public void SetUp()
                 {
-                     submitCommand = typeof(FormViewModel).GetProperty("SubmitCommand");
+                    submitCommand = typeof(FormViewModel).GetProperty("SubmitCommand");
                 }
 
                 [Test]

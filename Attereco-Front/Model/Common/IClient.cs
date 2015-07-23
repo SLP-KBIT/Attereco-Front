@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Attereco_Front.Model.Common
 {
-    public abstract class IClient
+    public interface IClient
     {
+        User PostUser(string sid);
     }
 }
