@@ -1,16 +1,20 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
+using Attereco_Front.Model.Common;
 
 namespace Attereco_Front.ViewModel
 {
     public class FormViewModel : ViewModelBase
     {
+        private IClient client;
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public FormViewModel()
+        public FormViewModel(IClient client)
         {
+            this.client = client;
         }
 
         #region String Sid
@@ -39,7 +43,7 @@ namespace Attereco_Front.ViewModel
         #region ICommand SubmitCommand
 
         /// <summary>
-        /// 出席処理のコマンド
+        /// 学籍番号による出席処理
         /// </summary>
 
         private ICommand _SubmitCommand;
@@ -52,8 +56,9 @@ namespace Attereco_Front.ViewModel
                 {
                     _SubmitCommand = new RelayCommand(
                         () =>
-                        { 
+                        {
                             // 出席処理
+                            client.PostUser(Sid);
                         });
                 }
                 return _SubmitCommand;

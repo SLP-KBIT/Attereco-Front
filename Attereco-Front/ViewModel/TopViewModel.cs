@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using Attereco_Front.Model.Common;
 
 namespace Attereco_Front.ViewModel
 {
@@ -9,7 +10,7 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public TopViewModel()
         {
-            FormVM = new FormViewModel();
+            FormVM = new FormViewModel(new DummyClient());
         }
 
         #region FormViewModel FormVM
