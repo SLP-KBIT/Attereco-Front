@@ -27,11 +27,13 @@
 
             <TextBox Grid.Column="0"
                      Height="50" Width="300"
-                     FontSize="30"/>
+                     FontSize="30"
+                     Text="{Binding FormVM.Sid}"/>
             <Button Grid.Column="1"
                     Height="50" Width="150"
                     FontSize="20"
                     Content="送信"
+                    Command="{Binding FormVM.SubmitCommand}"
                     Foreground="White"
                     Background="#FF4617B4"
                     Style="{StaticResource MetroButton}" />
