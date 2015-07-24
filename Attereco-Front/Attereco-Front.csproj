@@ -83,6 +83,7 @@
     <Compile Include="DynamicJson.cs" />
     <Compile Include="Model\Common\AtterecoClient.cs" />
     <Compile Include="Model\Common\DummyClient.cs" />
+    <Compile Include="Model\Common\FelicaManager.cs" />
     <Compile Include="Model\Common\IClient.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\User.cs" />

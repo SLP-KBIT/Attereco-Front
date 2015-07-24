@@ -1,9 +1,7 @@
-﻿using FelicaLib;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 using Attereco_Front.Model;
+using Attereco_Front.Model.Common;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Attereco_Front.ViewModel
 {
@@ -14,7 +12,7 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            PollingAsync();
+            FelicaManager.PollingAsync();
             TopVM = new TopViewModel();
         }
 
@@ -27,30 +25,5 @@ namespace Attereco_Front.ViewModel
 
         #endregion
 
-        public async void PollingAsync()
-        {
-            await Task.Run(
-                () =>
-                {
-                    TimerCallback timerDelegate = new TimerCallback(
-                        (_) =>
-                        {
-                            bool isConnection = FelicaUtility.TryConnectionToCard(FelicaSystemCode.Edy);
-                        	if (isConnection)
-                        	{
-                                try
-                                {
-                                    string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
-                                    System.Console.WriteLine(idm);
-                                }
-                                catch (System.Exception)
-                                {
-                                    throw;
-                                }
-                        	}
-                        });
-                    Timer timer = new Timer(timerDelegate, null, 0, 1000);
-                });
-        }
     }
 }
