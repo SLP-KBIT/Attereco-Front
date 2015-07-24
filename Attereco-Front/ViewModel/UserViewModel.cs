@@ -13,7 +13,6 @@ namespace Attereco_Front.ViewModel
         /// <summary>
         /// 学籍番号
         /// </summary>
-
         private string _Sid;
 
         public string Sid
@@ -35,7 +34,6 @@ namespace Attereco_Front.ViewModel
         /// <summary>
         /// 学籍番号
         /// </summary>
-
         private string _Name;
 
         public string Name
@@ -47,6 +45,48 @@ namespace Attereco_Front.ViewModel
                 {
                     _Name = value;
                     RaisePropertyChanged("Name");
+                }
+            }
+        }
+        #endregion
+
+        #region String Idm
+
+        /// <summary>
+        /// 学籍番号
+        /// </summary>
+        private string _Idm;
+
+        public string Idm
+        {
+            get { return _Idm; }
+            set
+            {
+                if (_Idm != value)
+                {
+                    _Idm = value;
+                    RaisePropertyChanged("Idm");
+                }
+            }
+        }
+        #endregion
+
+        #region String LoginTime
+
+        /// <summary>
+        /// 学籍番号
+        /// </summary>
+        private string _LoginTime;
+
+        public string LoginTime
+        {
+            get { return _LoginTime; }
+            set
+            {
+                if (_LoginTime != value)
+                {
+                    _LoginTime = value;
+                    RaisePropertyChanged("LoginTime");
                 }
             }
         }
