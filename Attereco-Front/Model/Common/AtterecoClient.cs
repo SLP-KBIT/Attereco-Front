@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
+using Attereco_Front;
 using Attereco_Front.Model;
 using Attereco_Front.Model.Common;
+using Codeplex.Data;
 
 namespace Attereco_Front.Model.Common
 {
@@ -39,23 +41,21 @@ namespace Attereco_Front.Model.Common
                 {"token",  settings.Token}
             };
             string url = settings.Url + "/attereco/api/v1/users/" + user.Sid + "/attend_sid";
-            Task task = Task.Factory.StartNew(
-                async () =>
-                {
-                    var content = new FormUrlEncodedContent(form);
-                    var response = await httpClient.PostAsync(url, content);
-                    Console.WriteLine(response.ToString());
-                }
-            );
+            var content = new FormUrlEncodedContent(form);
             try
             {
-                task.Start();
+                var response = httpClient.PostAsync(url, content);
+                var contents = response.Result.Content.ReadAsStringAsync();
+                dynamic obj = DynamicJson.Parse(contents.Result);
+                user.Sid = obj["sid"];
+                user.Name = obj["name"];
+                return user;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Source);
+                throw new NullReferenceException();
             }
-            return user;
         }
     }
 }
