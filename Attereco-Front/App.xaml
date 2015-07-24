@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:Attereco_Front.ViewModel"
              xmlns:view_top="clr-namespace:Attereco_Front.Views.Top"
+             xmlns:view_welcome="clr-namespace:Attereco_Front.Views.Welcome"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              StartupUri="Views/MainWindow.xaml"
@@ -17,6 +18,10 @@
                 <view_top:Top />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vm:WelcomeViewModel}">
+                <view_welcome:Welcome />
+            </DataTemplate>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Skins/MetroButton.xaml" />
             </ResourceDictionary.MergedDictionaries>

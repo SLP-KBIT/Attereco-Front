@@ -6,6 +6,12 @@ namespace Attereco_Front.ViewModel
     {
         public WelcomeViewModel()
         {
+            UserVM = new UserViewModel();
         }
+
+        /// <summary>
+        /// UserViewModelのインスタンス
+        /// </summary>
+        public UserViewModel UserVM { get; private set; }
     }
 }
