@@ -14,6 +14,7 @@ namespace Attereco_Front.ViewModel
         {
             FelicaManager.PollingAsync();
             TopVM = new TopViewModel();
+            WelcomeVM = new WelcomeViewModel();
         }
 
         #region TopViewModel TopVM
@@ -25,5 +26,13 @@ namespace Attereco_Front.ViewModel
 
         #endregion
 
+        #region WelcomeViewModel WelcomeVM
+
+        /// <summary>
+        /// WelcomeViewModelのインスタンス
+        /// </summary>
+        public WelcomeViewModel WelcomeVM { get; set; }
+
+        #endregion
     }
 }
