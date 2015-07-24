@@ -8,7 +8,7 @@ namespace Attereco_Front.Model.Common
 {
     public class AtterecoClient : IClient
     {
-        public User PostUser(string sid)
+        public User PostUser(User user)
         {
             throw new NotImplementedException();
         }

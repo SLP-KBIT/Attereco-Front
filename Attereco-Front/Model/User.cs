@@ -34,6 +34,13 @@ namespace Attereco_Front.Model
             this.LoginTime = dynamic["LoginTime"];
             this.Json = dynamic.ToString();
         }
+
+        /// <summary>
+        /// Userコンストラクタ
+        /// </summary>
+        public User()
+        {
+        }
         #endregion
 
         #region フィールド

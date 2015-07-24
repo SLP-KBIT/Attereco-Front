@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
+using Attereco_Front.Model;
 using Attereco_Front.Model.Common;
 
 namespace Attereco_Front.ViewModel
@@ -58,7 +59,11 @@ namespace Attereco_Front.ViewModel
                         () =>
                         {
                             // 出席処理
-                            client.PostUser(Sid);
+                            User user = new User()
+                            {
+                                Sid = this.Sid
+                            };
+                            user = client.PostUser(user);
                         });
                 }
                 return _SubmitCommand;
