@@ -13,7 +13,7 @@ namespace Attereco_Front.ViewModel
         public MainViewModel()
         {
             FelicaManager.PollingAsync();
-            TopVM = new TopViewModel();
+            TopVM = new TopViewModel(new DummyClient());
             WelcomeVM = new WelcomeViewModel();
         }
 
