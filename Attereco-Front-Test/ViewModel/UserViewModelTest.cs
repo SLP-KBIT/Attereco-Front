@@ -76,6 +76,66 @@ namespace Attereco_Front_Test.ViewModel
                     Assert.IsTrue(name.CanWrite);
                 }
             }
+
+            [TestFixture]
+            public class Idm
+            {
+                PropertyInfo idm;
+
+                [SetUp]
+                public void SetUp()
+                {
+                    idm = typeof(UserViewModel).GetProperty("Idm");
+                }
+
+                [Test]
+                public void 存在すること()
+                {
+                    Assert.AreEqual(idm.Name, "Idm");
+                }
+
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(idm.CanRead);
+                }
+
+                [Test]
+                public void 書き込めること()
+                {
+                    Assert.IsTrue(idm.CanWrite);
+                }
+            }
+
+            [TestFixture]
+            public class LoginTime
+            {
+                PropertyInfo loginTime;
+
+                [SetUp]
+                public void SetUp()
+                {
+                    loginTime = typeof(UserViewModel).GetProperty("LoginTime");
+                }
+
+                [Test]
+                public void 存在すること()
+                {
+                    Assert.AreEqual(loginTime.Name, "LoginTime");
+                }
+
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(loginTime.CanRead);
+                }
+
+                [Test]
+                public void 書き込めること()
+                {
+                    Assert.IsTrue(loginTime.CanWrite);
+                }
+            }
         }
     }
 }
