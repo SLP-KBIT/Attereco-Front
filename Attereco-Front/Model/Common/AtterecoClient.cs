@@ -36,12 +36,12 @@ namespace Attereco_Front.Model.Common
         /// <returns>レスポンスをセットしたユーザデータ</returns>
         public User PostUser(User user)
         {
-            Dictionary<string, string> form = new Dictionary<string,string>
+            string url = settings.Url + "/attereco/api/v1/users/" + user.Sid + "/attend_sid";
+            var content = new FormUrlEncodedContent(new Dictionary<string,string>
             {
                 {"token",  settings.Token}
-            };
-            string url = settings.Url + "/attereco/api/v1/users/" + user.Sid + "/attend_sid";
-            var content = new FormUrlEncodedContent(form);
+            });
+
             try
             {
                 var response = httpClient.PostAsync(url, content);
