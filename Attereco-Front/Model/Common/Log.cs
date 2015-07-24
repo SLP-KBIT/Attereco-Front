@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Attereco_Front.Model
+namespace Attereco_Front.Model.Common
 {
     /// <summary>
     /// Logを簡単に取ることを可能にするクラス

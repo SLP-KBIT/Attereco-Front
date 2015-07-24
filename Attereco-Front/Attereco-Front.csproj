@@ -87,7 +87,7 @@
     <Compile Include="Model\Common\FelicaManager.cs" />
     <Compile Include="Model\Common\IClient.cs" />
     <Compile Include="Model\Common\XMLFileManager.cs" />
-    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\Common\Log.cs" />
     <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
