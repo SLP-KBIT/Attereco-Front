@@ -13,6 +13,13 @@ namespace Attereco_Front.Model.Common
     /// </summary>
     public static class FelicaManager
     {
+        private static Felica felica;
+
+        static FelicaManager()
+        {
+            felica = new Felica(FelicaSystemCode.Edy);
+        }
+
         /// <summary>
         /// 非同期処理によるPolling
         /// </summary>
@@ -24,12 +31,11 @@ namespace Attereco_Front.Model.Common
                     TimerCallback timerDelegate = new TimerCallback(
                         (_) =>
                         {
-                            bool isConnection = FelicaUtility.TryConnectionToCard(FelicaSystemCode.Edy);
-                        	if (isConnection)
+                        	if (felica.TryConnectionToCard())
                         	{
                                 try
                                 {
-                                    string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
+                                    string idm = FelicaHelper.ToHexString(felica.GetIDm());
                                     System.Console.WriteLine(idm);
                                 }
                                 catch (System.Exception)
