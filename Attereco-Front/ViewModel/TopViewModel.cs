@@ -10,7 +10,7 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public TopViewModel()
         {
-            FormVM = new FormViewModel(new DummyClient());
+            FormVM = new FormViewModel(new AtterecoClient());
         }
 
         #region FormViewModel FormVM
