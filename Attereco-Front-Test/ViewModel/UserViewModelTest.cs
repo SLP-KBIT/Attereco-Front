@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,28 +7,13 @@ using GalaSoft.MvvmLight;
 
 using NUnit.Framework;
 using Attereco_Front.ViewModel;
+using System.Reflection;
 
 namespace Attereco_Front_Test.ViewModel
 {
-    /// <summary>
-    /// FormViewModelTestのテスト
-    /// </summary>
     [TestFixture]
-    public class FormViewModelTest
+    public class UserViewModelTest
     {
-        FormViewModel FormVM;
-        
-        [SetUp]
-        public void SetUp()
-        {
-            FormVM = new FormViewModel();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-        }
-
         [TestFixture]
         public class プロパティのテスト
         {
@@ -41,7 +25,7 @@ namespace Attereco_Front_Test.ViewModel
                 [SetUp]
                 public void SetUp()
                 {
-                     sid = typeof(FormViewModel).GetProperty("Sid");
+                    sid = typeof(UserViewModel).GetProperty("Sid");
                 }
 
                 [Test]
@@ -64,32 +48,32 @@ namespace Attereco_Front_Test.ViewModel
             }
 
             [TestFixture]
-            public class SubmitCommand
+            public class Name
             {
-                PropertyInfo submitCommand;
+                PropertyInfo name;
 
                 [SetUp]
                 public void SetUp()
                 {
-                     submitCommand = typeof(FormViewModel).GetProperty("SubmitCommand");
+                    name = typeof(UserViewModel).GetProperty("Name");
                 }
 
                 [Test]
                 public void 存在すること()
                 {
-                    Assert.AreEqual(submitCommand.Name, "SubmitCommand");
+                    Assert.AreEqual(name.Name, "Name");
                 }
 
                 [Test]
                 public void 読み込めること()
                 {
-                    Assert.IsTrue(submitCommand.CanRead);
+                    Assert.IsTrue(name.CanRead);
                 }
 
                 [Test]
-                public void 書き込めないこと()
+                public void 書き込めること()
                 {
-                    Assert.IsFalse(submitCommand.CanWrite);
+                    Assert.IsTrue(name.CanWrite);
                 }
             }
         }
