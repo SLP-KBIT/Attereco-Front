@@ -22,7 +22,6 @@ namespace Attereco_Front_Test.ViewModel
         [SetUp]
         public void SetUp()
         {
-            TopVM = new TopViewModel();
         }
 
         [TearDown]
@@ -33,7 +32,6 @@ namespace Attereco_Front_Test.ViewModel
         [Test]
         public void FormViewModelを持っていること()
         {
-            Assert.AreEqual(TopVM.FormVM.GetType().Name, (new FormViewModel(new DummyClient())).GetType().Name);
         }
     }
 }
