@@ -15,6 +15,8 @@ namespace Attereco_Front.Model.Common
     {
         private static Felica felica;
 
+        private const int pollingAsyncInterval = 250;
+
         static FelicaManager()
         {
             felica = new Felica(FelicaSystemCode.Edy);
@@ -38,13 +40,25 @@ namespace Attereco_Front.Model.Common
                                     string idm = FelicaHelper.ToHexString(felica.GetIDm());
                                     System.Console.WriteLine(idm);
                                 }
-                                catch (System.Exception)
+                                catch (AccessViolationException e)
                                 {
-                                    throw;
+                                    Log.Write(e.ToString());
+                                    Console.WriteLine(e.ToString());
                                 }
+                                catch (NullReferenceException e)
+                                {
+                                    Log.Write(e.ToString());
+                                    Console.WriteLine(e.ToString());
+                                }
+                                catch (InvalidOperationException e)
+                                {
+                                    Log.Write(e.ToString());
+                                    Console.WriteLine(e.ToString());
+                                }
+
                             }
                         });
-                    Timer timer = new Timer(timerDelegate, null, 0, 1000);
+                    Timer timer = new Timer(timerDelegate, null, 0, pollingAsyncInterval);
                 });
         }
     }
