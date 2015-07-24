@@ -2,6 +2,7 @@
 using Attereco_Front.Model;
 using Attereco_Front.Model.Common;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Attereco_Front.ViewModel
 {
@@ -13,8 +14,12 @@ namespace Attereco_Front.ViewModel
         public MainViewModel()
         {
             FelicaManager.PollingAsync();
-            TopVM = new TopViewModel(new DummyClient());
-            WelcomeVM = new WelcomeViewModel();
+            Pages = new List<ViewModelBase>()
+            {
+                new TopViewModel(new DummyClient(), TogglePage),
+                new WelcomeViewModel()
+            };
+            SelectedPage = Pages.First();
         }
 
         #region TopViewModel TopVM
@@ -34,5 +39,41 @@ namespace Attereco_Front.ViewModel
         public WelcomeViewModel WelcomeVM { get; set; }
 
         #endregion
+
+        #region Pages
+
+        /// <summary>
+        /// Pageのリスト
+        /// </summary>
+        public List<ViewModelBase> Pages { get; set; }
+
+        #endregion
+
+
+        private ViewModelBase _SelectedPage;
+
+        /// <summary>
+        /// 選ばれているpage
+        /// </summary>
+        public ViewModelBase SelectedPage
+        {
+            get { return _SelectedPage; }
+            set
+            {
+                if (_SelectedPage != value)
+                {
+                    _SelectedPage = value;
+                    RaisePropertyChanged("SelectedPage");
+                }
+            }
+        }
+
+        /// <summary>
+        /// ページを切り変えるメソッド
+        /// </summary>
+        public void TogglePage()
+        {
+            SelectedPage = Pages.Last();
+        }
     }
 }

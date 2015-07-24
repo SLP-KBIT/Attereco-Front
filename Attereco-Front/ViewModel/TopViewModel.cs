@@ -3,19 +3,22 @@ using Attereco_Front.Model.Common;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
 using Attereco_Front.Model;
+using System;
 
 namespace Attereco_Front.ViewModel
 {
     public class TopViewModel : ViewModelBase
     {
         private IClient client;
-
+        private Action togglePage;
+        
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public TopViewModel(IClient client)
+        public TopViewModel(IClient client, Action togglePage)
         {
             this.client = client;
+            this.togglePage = togglePage;
             UserVM = new UserViewModel();
         }
 
@@ -51,6 +54,7 @@ namespace Attereco_Front.ViewModel
                                 Sid = UserVM.Sid
                             };
                             user = client.PostUser(user);
+                            togglePage();
                         });
                 }
                 return _SubmitCommand;

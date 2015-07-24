@@ -12,6 +12,6 @@ namespace Attereco_Front.ViewModel
         /// <summary>
         /// UserViewModelのインスタンス
         /// </summary>
-        public UserViewModel UserVM { get; private set; }
+        public UserViewModel UserVM { get; set; }
     }
 }
