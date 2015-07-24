@@ -31,8 +31,8 @@ namespace Attereco_Front.Model.Common
                     TimerCallback timerDelegate = new TimerCallback(
                         (_) =>
                         {
-                        	if (felica.TryConnectionToCard())
-                        	{
+                            if (felica.TryConnectionToCard())
+                            {
                                 try
                                 {
                                     string idm = FelicaHelper.ToHexString(felica.GetIDm());
@@ -42,7 +42,7 @@ namespace Attereco_Front.Model.Common
                                 {
                                     throw;
                                 }
-                        	}
+                            }
                         });
                     Timer timer = new Timer(timerDelegate, null, 0, 1000);
                 });
