@@ -38,8 +38,15 @@ namespace Attereco_Front.ViewModel
                             bool isConnection = FelicaUtility.TryConnectionToCard(FelicaSystemCode.Edy);
                         	if (isConnection)
                         	{
-                        	    string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
-                        	    System.Console.WriteLine(idm);
+                                try
+                                {
+                                    string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
+                                    System.Console.WriteLine(idm);
+                                }
+                                catch (System.Exception)
+                                {
+                                    throw;
+                                }
                         	}
                         });
                     Timer timer = new Timer(timerDelegate, null, 0, 1000);
