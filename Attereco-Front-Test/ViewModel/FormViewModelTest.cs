@@ -34,8 +34,8 @@ namespace Attereco_Front_Test.ViewModel
         public class プロパティのテスト
         {
             [TestFixture]
-        	public class Sid
-        	{
+            public class Sid
+            {
                 PropertyInfo sid;
 
                 [SetUp]
@@ -50,22 +50,22 @@ namespace Attereco_Front_Test.ViewModel
                     Assert.AreEqual(sid.Name, "Sid");
                 }
 
-        	    [Test]
-        	    public void 読み込めること()
-        	    {
-        	        Assert.IsTrue(sid.CanRead);
-        	    }
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(sid.CanRead);
+                }
 
-        	    [Test]
-        	    public void 書き込めること()
-        	    {
-        	        Assert.IsTrue(sid.CanWrite);
-        	    }
-        	}
+                [Test]
+                public void 書き込めること()
+                {
+                    Assert.IsTrue(sid.CanWrite);
+                }
+            }
 
             [TestFixture]
-        	public class SubmitCommand
-        	{
+            public class SubmitCommand
+            {
                 PropertyInfo submitCommand;
 
                 [SetUp]
@@ -80,18 +80,18 @@ namespace Attereco_Front_Test.ViewModel
                     Assert.AreEqual(submitCommand.Name, "SubmitCommand");
                 }
 
-        	    [Test]
-        	    public void 読み込めること()
-        	    {
-        	        Assert.IsTrue(submitCommand.CanRead);
-        	    }
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(submitCommand.CanRead);
+                }
 
-        	    [Test]
-        	    public void 書き込めないこと()
-        	    {
-        	        Assert.IsFalse(submitCommand.CanWrite);
-        	    }
-        	}
+                [Test]
+                public void 書き込めないこと()
+                {
+                    Assert.IsFalse(submitCommand.CanWrite);
+                }
+            }
         }
     }
 }
