@@ -9,18 +9,29 @@ using Attereco_Front.Model.Common;
 
 namespace Attereco_Front.Model.Common
 {
+    /// <summary>
+    /// HTTPリクエストのためのクライアント
+    /// </summary>
     public class AtterecoClient : IClient
     {
         private HttpClient httpClient;
 
         private Settings settings;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public AtterecoClient()
         {
             httpClient = new HttpClient();
             settings = XMLFileManager.ReadXml<Settings>("Settings.xml");
         }
 
+        /// <summary>
+        /// 出席処理
+        /// </summary>
+        /// <param name="user">対象のユーザデータ</param>
+        /// <returns>レスポンスをセットしたユーザデータ</returns>
         public User PostUser(User user)
         {
             Dictionary<string, string> form = new Dictionary<string,string>

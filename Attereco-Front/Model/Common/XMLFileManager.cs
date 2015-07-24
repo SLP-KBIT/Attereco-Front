@@ -3,6 +3,9 @@ using System.Xml.Serialization;
 
 namespace Attereco_Front.Model.Common
 {
+    /// <summary>
+    /// XMLの操作
+    /// </summary>
     public static class XMLFileManager
     {
         //--- 定数
@@ -15,6 +18,12 @@ namespace Attereco_Front.Model.Common
 
         //--- static メソッド
 
+        /// <summary>
+        /// XMLの読み込み
+        /// </summary>
+        /// <typeparam name="T">ジェネリック</typeparam>
+        /// <param name="fileName">対象ファイル名</param>
+        /// <returns>生成されたオブジェクト</returns>
         public static T ReadXml<T>(string fileName) where T : new()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -33,6 +42,12 @@ namespace Attereco_Front.Model.Common
             return obj;
         }
 
+        /// <summary>
+        /// XMLの書き込み
+        /// </summary>
+        /// <typeparam name="T">ジェネリック</typeparam>
+        /// <param name="fileName">対象ファイル名</param>
+        /// <param name="obj">対象オブジェクト</param>
         public static void WriteXml<T>(string fileName, T obj)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
