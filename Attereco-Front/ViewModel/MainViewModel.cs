@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight;
 using Attereco_Front.Model;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Attereco_Front.ViewModel
@@ -31,15 +32,17 @@ namespace Attereco_Front.ViewModel
             await Task.Run(
                 () =>
                 {
-                    while (true)
-                    {
-                        bool isConnection = FelicaUtility.TryConnectionToCard(FelicaSystemCode.Edy);
-                        if (isConnection)
+                    TimerCallback timerDelegate = new TimerCallback(
+                        (_) =>
                         {
-                            string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
-                            System.Console.WriteLine(idm);
-                        }
-                    }
+                            bool isConnection = FelicaUtility.TryConnectionToCard(FelicaSystemCode.Edy);
+                        	if (isConnection)
+                        	{
+                        	    string idm = FelicaHelper.ToHexString(FelicaUtility.GetIDm(FelicaSystemCode.Edy));
+                        	    System.Console.WriteLine(idm);
+                        	}
+                        });
+                    Timer timer = new Timer(timerDelegate, null, 0, 1000);
                 });
         }
     }
