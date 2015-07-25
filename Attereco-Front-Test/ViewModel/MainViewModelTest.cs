@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 
 using NUnit.Framework;
 using Attereco_Front.ViewModel;
+using System.Reflection;
 
 namespace Attereco_Front_Test
 {
@@ -16,12 +17,9 @@ namespace Attereco_Front_Test
     [TestFixture]
     public class MainViewModelTest
     {
-        MainViewModel MainVM;
-        
         [SetUp]
         public void SetUp()
         {
-            MainVM = new MainViewModel();
         }
 
         [TearDown]
@@ -29,10 +27,68 @@ namespace Attereco_Front_Test
         {
         }
 
-        [Test]
-        public void TopViewModelを持っていること()
+        [TestFixture]
+        public class プロパティのテスト
         {
-            Assert.AreEqual(MainVM.TopVM.GetType().Name, (new TopViewModel()).GetType().Name);
+            [TestFixture]
+            public class TopVM
+            {
+                PropertyInfo topVM;
+
+                [SetUp]
+                public void SetUp()
+                {
+                    topVM = typeof(MainViewModel).GetProperty("TopVM");
+                }
+
+                [Test]
+                public void 存在すること()
+                {
+                    Assert.AreEqual(topVM.Name, "TopVM");
+                }
+
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(topVM.CanRead);
+                }
+
+                [Test]
+                public void 書き込めること()
+                {
+                    Assert.IsTrue(topVM.CanWrite);
+                }
+            }
+
+            [TestFixture]
+            public class WelcomeVM
+            {
+                PropertyInfo welcomeVM;
+
+                [SetUp]
+                public void SetUp()
+                {
+                    welcomeVM = typeof(MainViewModel).GetProperty("WelcomeVM");
+                }
+
+                [Test]
+                public void 存在すること()
+                {
+                    Assert.AreEqual(welcomeVM.Name, "WelcomeVM");
+                }
+
+                [Test]
+                public void 読み込めること()
+                {
+                    Assert.IsTrue(welcomeVM.CanRead);
+                }
+
+                [Test]
+                public void 書き込めること()
+                {
+                    Assert.IsTrue(welcomeVM.CanWrite);
+                }
+            }
         }
     }
 }
