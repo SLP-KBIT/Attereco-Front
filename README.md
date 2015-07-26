@@ -1,5 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready)](https://waffle.io/SLP-KBIT/Attereco-Front)
 # Attereco-Front
+
+[![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready)](https://waffle.io/SLP-KBIT/Attereco-Front)
 
 ## About
 
