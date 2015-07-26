@@ -1,6 +1,7 @@
 # Attereco-Front
 
-[![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready)](https://waffle.io/SLP-KBIT/Attereco-Front)
+[![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready)](https://waffle.io/SLP-KBIT/Attereco-Front)[![Build status](https://ci.appveyor.com/api/projects/status/8wyjykmvi5dmbewc/branch/master?svg=true)](https://ci.appveyor.com/project/MaxMEllon/attereco-front/branch/master)
+
 
 ## About
 
