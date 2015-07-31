@@ -90,6 +90,7 @@
     <Compile Include="Model\Common\Log.cs" />
     <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\AtterecoViewModelBase.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TopViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
