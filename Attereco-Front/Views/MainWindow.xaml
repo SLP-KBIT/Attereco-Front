@@ -32,7 +32,7 @@
         </Border.Effect>
         <Grid>
             <ContentControl Grid.Row="0"
-                            Content="{Binding TopVM}" />
+                            Content="{Binding SelectedPage}" />
             <Border Grid.Row="1" Background="#FF007ACC">
             </Border>
             <Grid.RowDefinitions>

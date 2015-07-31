@@ -1,7 +1,7 @@
 # Attereco-Front
 
 [![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready&style=flat-square)](https://waffle.io/SLP-KBIT/Attereco-Front)
-[![BuildStatus](https://img.shields.io/appveyor/ci/maxmellon/Attereco-Front/master.svg?style=flat-squaree)](https://ci.appveyor.com/project/MaxMEllon/attereco-front/branch/master)
+[![BuildStatus](https://img.shields.io/appveyor/ci/maxmellon/Attereco-Front/master.svg?style=flat-square)](https://ci.appveyor.com/project/MaxMEllon/attereco-front/branch/master)
 [![Release](https://img.shields.io/github/release/SLP-KBIT/Attereco-Front.svg?style=flat-square)](https://github.com/SLP-KBIT/Attereco-Front/releases/latest)
 [![License](https://img.shields.io/github/license/SLP-KBIT/Attereco-Front.svg?style=flat-square)](https://github.com/SLP-KBIT/Attereco-Front/blob/master/LICENSE.txt)
 

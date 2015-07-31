@@ -15,7 +15,7 @@ namespace Attereco_Front.Model.Common
     {
         private static Felica felica;
 
-        private const int pollingAsyncInterval = 250;
+        private const int pollingAsyncInterval = 1000;
 
         static FelicaManager()
         {
