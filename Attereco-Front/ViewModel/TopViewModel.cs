@@ -7,29 +7,19 @@ using System;
 
 namespace Attereco_Front.ViewModel
 {
-    public class TopViewModel : ViewModelBase
+    public class TopViewModel : AtterecoViewModelBase
     {
         private IClient client;
-        private Action togglePage;
+        private Action<UserViewModel> togglePage;
         
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public TopViewModel(IClient client, Action togglePage)
+        public TopViewModel(IClient client, Action<UserViewModel> togglePage)
         {
             this.client = client;
             this.togglePage = togglePage;
-            UserVM = new UserViewModel();
         }
-
-        #region FormViewModel UserVM
-
-        /// <summary>
-        /// FormViewModelのインスタンス
-        /// </summary>
-        public UserViewModel UserVM { get; set; }
-
-        #endregion
 
         #region ICommand SubmitCommand
 
@@ -54,7 +44,9 @@ namespace Attereco_Front.ViewModel
                                 Sid = UserVM.Sid
                             };
                             user = client.PostUser(user);
-                            togglePage();
+                            UserVM.Name = user.Name;
+                            UserVM.Sid = user.Sid;
+                            togglePage(UserVM);
                         });
                 }
                 return _SubmitCommand;
