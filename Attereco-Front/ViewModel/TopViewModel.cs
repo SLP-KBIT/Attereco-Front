@@ -38,14 +38,7 @@ namespace Attereco_Front.ViewModel
                     _SubmitCommand = new RelayCommand(
                         () =>
                         {
-                            // 出席処理
-                            User user = new User()
-                            {
-                                Sid = UserVM.Sid
-                            };
-                            user = client.PostUser(user);
-                            UserVM.Name = user.Name;
-                            UserVM.Sid = user.Sid;
+                            AttendSid(client);
                             togglePage(UserVM);
                         });
                 }
