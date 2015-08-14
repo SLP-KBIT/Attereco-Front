@@ -8,7 +8,7 @@ namespace Attereco_Front.Model.Common
 {
     public class DummyClient : IClient
     {
-        public User PostUser(User user)
+        public User AttendSid(User user)
         {
             user.Name = "ほげ太郎";
             user.Sid = "s00t000";
@@ -16,5 +16,11 @@ namespace Attereco_Front.Model.Common
             Console.WriteLine(user);
             return user;
         }
+
+        public User AttendIdm(User user)
+        {
+            return user;
+        }
+
     }
 }

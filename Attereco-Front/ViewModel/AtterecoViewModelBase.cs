@@ -36,7 +36,7 @@ namespace Attereco_Front.ViewModel
             {
                 Sid = UserVM.Sid
             };
-            user = client.PostUser(user);
+            user = client.AttendSid(user);
             UserVM.Name = user.Name;
             UserVM.Sid = user.Sid;
         }
