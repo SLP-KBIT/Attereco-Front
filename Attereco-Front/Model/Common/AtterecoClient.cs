@@ -63,8 +63,9 @@ namespace Attereco_Front.Model.Common
             return user;
         }
 
-        public User AttendIdm(User user)
+        public User AttendIdm(string idm)
         {
+            User user = new User();
             return user;
         }
     }

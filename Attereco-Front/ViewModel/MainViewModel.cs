@@ -13,17 +13,17 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            FelicaManager.PollingAsync();
             Pages = new List<AtterecoViewModelBase>()
             {
                 new TopViewModel(new DummyClient(), TogglePage),
                 new WelcomeViewModel()
             };
+            FelicaManager.PollingAsync(TogglePage, Pages.First().UserVM);
             SelectedPage = Pages.First();
         }
 
-        #region TopViewModel TopVM
 
+        #region TopViewModel TopVM
         /// <summary>
         /// TopViewModelのインスタンス
         /// </summary>
@@ -39,7 +39,6 @@ namespace Attereco_Front.ViewModel
         public WelcomeViewModel WelcomeVM { get; set; }
 
         #endregion
-
         #region Pages
 
         /// <summary>
@@ -74,6 +73,12 @@ namespace Attereco_Front.ViewModel
         public void TogglePage()
         {
             SelectedPage = Pages.Last();
+        }
+
+        public void TogglePage(UserViewModel userVM)
+        {
+            SelectedPage = Pages.Last();
+            SelectedPage.UserVM = userVM;
         }
     }
 }

@@ -17,8 +17,13 @@ namespace Attereco_Front.Model.Common
             return user;
         }
 
-        public User AttendIdm(User user)
+        public User AttendIdm(string idm)
         {
+            User user = new User();
+            user.Name = "ほげ太郎_IDm";
+            // user.Sid = "s00t000";
+            user.LoginTime = new DateTime(2015, 1, 1, 12, 0, 0);
+            Console.WriteLine(user);
             return user;
         }
 
