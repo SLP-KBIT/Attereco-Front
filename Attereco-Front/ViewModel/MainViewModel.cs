@@ -71,10 +71,9 @@ namespace Attereco_Front.ViewModel
         /// <summary>
         /// ページを切り変えるメソッド
         /// </summary>
-        public void TogglePage(UserViewModel userVM)
+        public void TogglePage()
         {
             SelectedPage = Pages.Last();
-            SelectedPage.UserVM = userVM;
         }
     }
 }

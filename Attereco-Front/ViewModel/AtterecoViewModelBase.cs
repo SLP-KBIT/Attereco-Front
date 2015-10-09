@@ -9,13 +9,17 @@ namespace Attereco_Front.ViewModel
     {
         public AtterecoViewModelBase()
         {
-            UserVM = new UserViewModel();
+        }
+
+        static AtterecoViewModelBase()
+        {
+            _UserVM = new UserViewModel();
         }
 
         /// <summary>
         /// UserViewModelのインスタンス
         /// </summary>
-        private UserViewModel _UserVM;
+        private static UserViewModel _UserVM;
 
         public UserViewModel UserVM
         {
