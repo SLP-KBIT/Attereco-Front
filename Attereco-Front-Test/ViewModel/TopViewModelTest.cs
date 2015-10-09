@@ -18,14 +18,27 @@ namespace Attereco_Front_Test.ViewModel
     [TestFixture]
     public class TopViewModelTest
     {
+        private TopViewModel TopVM;
+
         [SetUp]
         public void SetUp()
         {
+            MainViewModel MainVM = new MainViewModel();
+            TopVM = new TopViewModel(new DummyClient(), MainVM.TogglePage);
         }
 
         [TearDown]
         public void TearDown()
         {
+        }
+
+        [Test]
+        public void SubmitCommand()
+        {
+            TopVM.UserVM.Sid = "hogehoge";
+            TopVM.SubmitCommand.Execute(null);
+            WelcomeViewModel welcome = new WelcomeViewModel();
+            Assert.AreEqual(welcome.UserVM.Sid, "hogehogesid");
         }
 
         [TestFixture]

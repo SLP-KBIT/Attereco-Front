@@ -11,7 +11,7 @@ namespace Attereco_Front.Model.Common
         public User AttendSid(User user)
         {
             user.Name = "ほげ太郎";
-            // user.Sid = "s00t000";
+            user.Sid = user.Sid + "sid";
             user.LoginTime = new DateTime(2015, 1, 1, 12, 0, 0);
             Console.WriteLine(user);
             return user;
@@ -21,7 +21,7 @@ namespace Attereco_Front.Model.Common
         {
             User user = new User();
             user.Name = "ほげ太郎_IDm";
-            // user.Sid = "s00t000";
+            user.Sid = user.Sid + "idm";
             user.LoginTime = new DateTime(2015, 1, 1, 12, 0, 0);
             Console.WriteLine(user);
             return user;
