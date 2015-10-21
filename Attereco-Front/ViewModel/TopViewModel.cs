@@ -10,12 +10,12 @@ namespace Attereco_Front.ViewModel
     public class TopViewModel : AtterecoViewModelBase
     {
         private IClient client;
-        private Action<UserViewModel> togglePage;
+        private Action togglePage;
         
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public TopViewModel(IClient client, Action<UserViewModel> togglePage)
+        public TopViewModel(IClient client, Action togglePage)
         {
             this.client = client;
             this.togglePage = togglePage;
@@ -38,15 +38,8 @@ namespace Attereco_Front.ViewModel
                     _SubmitCommand = new RelayCommand(
                         () =>
                         {
-                            // 出席処理
-                            User user = new User()
-                            {
-                                Sid = UserVM.Sid
-                            };
-                            user = client.PostUser(user);
-                            UserVM.Name = user.Name;
-                            UserVM.Sid = user.Sid;
-                            togglePage(UserVM);
+                            AttendSid(client);
+                            togglePage();
                         });
                 }
                 return _SubmitCommand;

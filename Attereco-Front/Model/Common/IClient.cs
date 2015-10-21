@@ -8,6 +8,7 @@ namespace Attereco_Front.Model.Common
 {
     public interface IClient
     {
-        User PostUser(User user);
+        User AttendSid(User user);
+        User AttendIdm(string idm);
     }
 }

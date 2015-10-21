@@ -1,4 +1,6 @@
-# Attereco-Front
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SLP-KBIT/Attereco-Front/logo/AtterecoFront.png">
+</p>
 
 [![Stories in Ready](https://badge.waffle.io/SLP-KBIT/Attereco-Front.png?label=ready&title=Ready&style=flat-square)](https://waffle.io/SLP-KBIT/Attereco-Front)
 [![BuildStatus](https://img.shields.io/appveyor/ci/maxmellon/Attereco-Front/master.svg?style=flat-square)](https://ci.appveyor.com/project/MaxMEllon/attereco-front/branch/master)
