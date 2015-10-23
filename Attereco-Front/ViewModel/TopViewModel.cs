@@ -4,6 +4,7 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
 using Attereco_Front.Model;
 using System;
+using System.Threading.Tasks;
 
 namespace Attereco_Front.ViewModel
 {
@@ -36,9 +37,13 @@ namespace Attereco_Front.ViewModel
                 if (_SubmitCommand == null)
                 {
                     _SubmitCommand = new RelayCommand(
-                        () =>
+                        async () =>
                         {
                             AttendSid(client);
+                            togglePage();
+                            await Task.Delay(1000);
+                            UserVM.Sid = "";
+                            UserVM.Name = "";
                             togglePage();
                         });
                 }
