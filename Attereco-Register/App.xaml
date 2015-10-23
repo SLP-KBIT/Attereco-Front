@@ -1,0 +1,17 @@
+﻿<Application x:Class="Attereco_Register.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="View/MainWindow.xaml"
+             xmlns:vm="clr-namespace:Attereco_Register.ViewModel"
+             xmlns:view="clr-namespace:Attereco_Register.View"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d"
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MetroButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
