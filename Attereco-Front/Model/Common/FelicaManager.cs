@@ -1,4 +1,5 @@
-﻿using FelicaLib;
+﻿using Attereco_Front.ViewModel;
+using FelicaLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,31 +15,43 @@ namespace Attereco_Front.Model.Common
     public static class FelicaManager
     {
         private static Felica felica;
+        private static IClient client;
 
         private const int pollingAsyncInterval = 1000;
 
         static FelicaManager()
         {
             felica = new Felica(FelicaSystemCode.Edy);
+            client = new AtterecoClient();
         }
 
         /// <summary>
         /// 非同期処理によるPolling
         /// </summary>
-        public static async void PollingAsync()
+        public static async void PollingAsync(Action<UserViewModel> togglePage,  UserViewModel userVM)
         {
             await Task.Run(
                 () =>
                 {
                     TimerCallback timerDelegate = new TimerCallback(
-                        (_) =>
+                        async (_) =>
                         {
                             if (felica.TryConnectionToCard())
                             {
                                 try
                                 {
                                     string idm = FelicaHelper.ToHexString(felica.GetIDm());
-                                    System.Console.WriteLine(idm);
+                                    if (idm != null)
+                                    {
+                                        User user = client.AttendIdm(idm);
+                                        userVM.Sid = user.Sid;
+                                        userVM.Name = user.Name;
+                                        togglePage(userVM);
+                                        await Task.Delay(1000);
+                                        userVM.Sid = "";
+                                        userVM.Name = "";
+                                        togglePage(userVM);
+                                    }
                                 }
                                 catch (AccessViolationException e)
                                 {

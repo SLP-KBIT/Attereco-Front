@@ -8,6 +8,8 @@ using Attereco_Front;
 using Attereco_Front.Model;
 using Attereco_Front.Model.Common;
 using Codeplex.Data;
+using System.Net.Http.Headers;
+using System.Net;
 
 namespace Attereco_Front.Model.Common
 {
@@ -17,7 +19,6 @@ namespace Attereco_Front.Model.Common
     public class AtterecoClient : IClient
     {
         private HttpClient httpClient;
-
         private Settings settings;
 
         /// <summary>
@@ -29,33 +30,42 @@ namespace Attereco_Front.Model.Common
             settings = XMLFileManager.ReadXml<Settings>("Settings.xml");
         }
 
-        /// <summary>
-        /// 出席処理
-        /// </summary>
-        /// <param name="user">対象のユーザデータ</param>
-        /// <returns>レスポンスをセットしたユーザデータ</returns>
-        public User PostUser(User user)
+        public User AttendBase(string url)
         {
-            string url = settings.Url + "/attereco/api/v1/users/" + user.Sid + "/attend_sid";
-            var content = new FormUrlEncodedContent(new Dictionary<string,string>
+            using (var client = new WebClient())
             {
-                {"token",  settings.Token}
-            });
+                client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                client.Headers[HttpRequestHeader.ContentEncoding] = "utf-8";
+                try
+                {
+                    User user = new User();
+                    string response = client.UploadString(url, "POST", "");
+                    var result = DynamicJson.Parse(response);
+                    user.Sid = result["sid"];
+                    user.Name = result["name"];
+                    return user;
+                }
+                catch (WebException e)
+                {
+                    Log.Write(e.Status.ToString());
+                    Console.WriteLine(e.Source);
+                    throw new NullReferenceException();
+                }
+            }
+        }
 
-            try
-            {
-                var response = httpClient.PostAsync(url, content);
-                var contents = response.Result.Content.ReadAsStringAsync();
-                dynamic obj = DynamicJson.Parse(contents.Result);
-                user.Sid = obj["sid"];
-                user.Name = obj["name"];
-                return user;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Source);
-                throw new NullReferenceException();
-            }
+        public User AttendSid(User user)
+        {
+            string url = settings.Url + "/users/" + user.Sid 
+                                      + "/attend_sid?token=" + settings.Token;
+            return AttendBase(url);
+        }
+
+        public User AttendIdm(string idm)
+        {
+            string url = settings.Url + "/users/" + idm
+                                      + "/attend_idm?token=" + settings.Token;
+            return AttendBase(url);
         }
     }
 }

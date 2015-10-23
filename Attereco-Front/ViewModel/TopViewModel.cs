@@ -4,18 +4,19 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
 using Attereco_Front.Model;
 using System;
+using System.Threading.Tasks;
 
 namespace Attereco_Front.ViewModel
 {
     public class TopViewModel : AtterecoViewModelBase
     {
         private IClient client;
-        private Action<UserViewModel> togglePage;
+        private Action togglePage;
         
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public TopViewModel(IClient client, Action<UserViewModel> togglePage)
+        public TopViewModel(IClient client, Action togglePage)
         {
             this.client = client;
             this.togglePage = togglePage;
@@ -36,17 +37,14 @@ namespace Attereco_Front.ViewModel
                 if (_SubmitCommand == null)
                 {
                     _SubmitCommand = new RelayCommand(
-                        () =>
+                        async () =>
                         {
-                            // 出席処理
-                            User user = new User()
-                            {
-                                Sid = UserVM.Sid
-                            };
-                            user = client.PostUser(user);
-                            UserVM.Name = user.Name;
-                            UserVM.Sid = user.Sid;
-                            togglePage(UserVM);
+                            AttendSid(client);
+                            togglePage();
+                            await Task.Delay(1000);
+                            UserVM.Sid = "";
+                            UserVM.Name = "";
+                            togglePage();
                         });
                 }
                 return _SubmitCommand;

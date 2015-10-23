@@ -1,4 +1,7 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Attereco_Front.Model;
+using Attereco_Front.Model.Common;
+using GalaSoft.MvvmLight;
+using System;
 
 namespace Attereco_Front.ViewModel
 {
@@ -6,13 +9,17 @@ namespace Attereco_Front.ViewModel
     {
         public AtterecoViewModelBase()
         {
-            UserVM = new UserViewModel();
+        }
+
+        static AtterecoViewModelBase()
+        {
+            _UserVM = new UserViewModel();
         }
 
         /// <summary>
         /// UserViewModelのインスタンス
         /// </summary>
-        private UserViewModel _UserVM;
+        private static UserViewModel _UserVM;
 
         public UserViewModel UserVM
         {
@@ -27,5 +34,15 @@ namespace Attereco_Front.ViewModel
             }
         }
 
+        public void AttendSid(IClient client)
+        {
+            User user = new User()
+            {
+                Sid = UserVM.Sid
+            };
+            user = client.AttendSid(user);
+            UserVM.Name = user.Name;
+            UserVM.Sid = user.Sid;
+        }
     }
 }
