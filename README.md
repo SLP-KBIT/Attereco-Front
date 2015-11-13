@@ -9,7 +9,22 @@
 
 ## About
 
+学生証を使ってサークルの出席を取ることができるアプリケーション this application allows to attendance of club by student card
+
 ## Installation
+
+```
+1. Setting.xml.sample を Setting.xmlにリネーム
+2. Setting.xml に Attereco-Backのデプロイされたサーバーのアドレスとtokenを入力
+3. Attereco-Backにアクセスし、LinkUSを通してユーザー登録
+4. Attereco-Legisterを用いてカードを登録
+```
+
+## Usage
+
+```
+1. Attereco-Frontが立ち上がっているパソコンにカードをかざす
+```
 
 ## Requirements
 
@@ -25,8 +40,6 @@
 
 - [MetroStyleforWPFButton](https://gist.github.com/alimbada/3083937)
 - [grabacr.net](http://grabacr.net/archives/507)
-
-## Usage
 
 ## Contact
 
