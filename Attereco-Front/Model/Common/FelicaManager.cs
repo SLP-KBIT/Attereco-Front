@@ -22,6 +22,7 @@ namespace Attereco_Front.Model.Common
         static FelicaManager()
         {
             felica = new Felica(FelicaSystemCode.Edy);
+            client = new AtterecoClient();
         }
 
         /// <summary>
@@ -29,12 +30,11 @@ namespace Attereco_Front.Model.Common
         /// </summary>
         public static async void PollingAsync(Action<UserViewModel> togglePage,  UserViewModel userVM)
         {
-            client = new DummyClient();
             await Task.Run(
                 () =>
                 {
                     TimerCallback timerDelegate = new TimerCallback(
-                        (_) =>
+                        async (_) =>
                         {
                             if (felica.TryConnectionToCard())
                             {
@@ -46,6 +46,10 @@ namespace Attereco_Front.Model.Common
                                         User user = client.AttendIdm(idm);
                                         userVM.Sid = user.Sid;
                                         userVM.Name = user.Name;
+                                        togglePage(userVM);
+                                        await Task.Delay(1000);
+                                        userVM.Sid = "";
+                                        userVM.Name = "";
                                         togglePage(userVM);
                                     }
                                 }

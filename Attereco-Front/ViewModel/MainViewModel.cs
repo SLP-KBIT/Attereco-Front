@@ -15,7 +15,7 @@ namespace Attereco_Front.ViewModel
         {
             Pages = new List<AtterecoViewModelBase>()
             {
-                new TopViewModel(new DummyClient(), TogglePage),
+                new TopViewModel(new AtterecoClient(), TogglePage),
                 new WelcomeViewModel()
             };
             FelicaManager.PollingAsync(TogglePage, Pages.First().UserVM);
@@ -39,6 +39,7 @@ namespace Attereco_Front.ViewModel
         public WelcomeViewModel WelcomeVM { get; set; }
 
         #endregion
+
         #region Pages
 
         /// <summary>
@@ -72,12 +73,12 @@ namespace Attereco_Front.ViewModel
         /// </summary>
         public void TogglePage()
         {
-            SelectedPage = Pages.Last();
+            SelectedPage = SelectedPage == Pages.First() ? Pages.Last() : Pages.First();
         }
 
         public void TogglePage(UserViewModel userVM)
         {
-            SelectedPage = Pages.Last();
+            SelectedPage = SelectedPage == Pages.First() ? Pages.Last() : Pages.First();
             SelectedPage.UserVM = userVM;
         }
     }
