@@ -16,9 +16,9 @@ using System.ComponentModel;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Threading;
 using FelicaLib;
-using Attereco_Register.ViewModel;
+using Attereco_Front.ViewModel;
 
-namespace Attereco_Register.View
+namespace Attereco_Front.View
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック

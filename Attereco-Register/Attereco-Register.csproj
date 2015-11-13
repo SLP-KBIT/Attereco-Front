@@ -7,7 +7,7 @@
     <ProjectGuid>{072C09FE-EB9A-416F-BA4F-5F2A7241DC47}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Attereco_Register</RootNamespace>
+    <RootNamespace>Attereco_Front</RootNamespace>
     <AssemblyName>Attereco-Register</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -81,6 +81,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Common\XMLFileManager.cs" />
+    <Compile Include="Model\Settings.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="View\MainWindow.xaml">
