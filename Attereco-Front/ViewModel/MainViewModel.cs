@@ -39,6 +39,7 @@ namespace Attereco_Front.ViewModel
         public WelcomeViewModel WelcomeVM { get; set; }
 
         #endregion
+
         #region Pages
 
         /// <summary>
