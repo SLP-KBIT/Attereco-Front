@@ -7,6 +7,8 @@
 [![Release](https://img.shields.io/github/release/SLP-KBIT/Attereco-Front.svg?style=flat-square)](https://github.com/SLP-KBIT/Attereco-Front/releases/latest)
 [![License](https://img.shields.io/github/license/SLP-KBIT/Attereco-Front.svg?style=flat-square)](https://github.com/SLP-KBIT/Attereco-Front/blob/master/LICENSE.txt)
 
+[![Build Status](https://travis-ci.org/rdireen/simple.svg?branch=master)](https://travis-ci.org/rdireen/simple)
+
 ## About
 
 学生証を使ってサークルの出席を取ることができるアプリケーション this application allows to attendance of club by student card
